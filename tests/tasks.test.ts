@@ -1,7 +1,7 @@
 import request from 'supertest';
+import { beforeEach, describe, expect, it } from '@jest/globals';
 import app from '../src/app';
 import { resetTasks } from '../src/taskController';
-import { beforeEach, describe, it } from 'node:test';
 
 beforeEach(() => {
   resetTasks();
@@ -87,7 +87,4 @@ describe('DELETE /tasks/:id', () => {
     expect(res.status).toBe(404);
   });
 });
-function expect(status: number) {
-  throw new Error('Function not implemented.');
-}
 
