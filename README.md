@@ -39,6 +39,20 @@ A API ficará disponível em `http://localhost:3000`.
 
 ---
 
+## Deploy na Vercel
+
+O workflow de CD faz deploy em produção após um CI aprovado na branch `main`. Antes do primeiro deploy, crie um projeto na Vercel conectado a este repositório e configure estes segredos no GitHub:
+
+| Segredo | Valor |
+|---------|-------|
+| `VERCEL_TOKEN` | Token criado nas configurações da conta Vercel |
+| `VERCEL_ORG_ID` | ID da organização ou conta Vercel |
+| `VERCEL_PROJECT_ID` | ID do projeto Vercel |
+
+Os dois IDs podem ser obtidos após executar `vercel link` localmente, no arquivo `.vercel/project.json` gerado pela CLI. O deploy também pode ser iniciado manualmente pela aba **Actions** do GitHub, no workflow `CD`.
+
+---
+
 ## Endpoints
 
 ### `GET /tasks`
